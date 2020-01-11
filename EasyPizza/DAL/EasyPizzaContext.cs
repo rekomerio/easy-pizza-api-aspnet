@@ -18,5 +18,6 @@ namespace EasyPizza.DAL
         public DbSet<MenuItem> MenuItems { get; set; }
 
         public DbSet<Ingredient> Ingredients { get; set; }
+        public DbSet<Recipient> Recipients { get; set; }
     }
 }

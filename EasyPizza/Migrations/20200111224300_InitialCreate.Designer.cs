@@ -3,14 +3,16 @@ using System;
 using EasyPizza.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EasyPizza.Migrations
 {
     [DbContext(typeof(EasyPizzaContext))]
-    partial class EasyPizzaContextModelSnapshot : ModelSnapshot
+    [Migration("20200111224300_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

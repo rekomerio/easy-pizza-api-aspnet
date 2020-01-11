@@ -29,7 +29,9 @@ namespace EasyPizza.Controllers
         public async Task<ActionResult<IEnumerable<Order>>> GetOrder()
         {
             return await _context.Orders
+                
                 .Include(order => order.OrderItems)
+                .Include(order => order.Recipient)
                 .ToListAsync();
         }
 
