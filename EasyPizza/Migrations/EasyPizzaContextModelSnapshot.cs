@@ -83,11 +83,14 @@ namespace EasyPizza.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("DeliveryStatus")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Note")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("OrderStatus")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("OrderType")
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("PaymentMethod")
                         .HasColumnType("INTEGER");

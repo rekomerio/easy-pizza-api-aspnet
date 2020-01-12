@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EasyPizza.Migrations
 {
     [DbContext(typeof(EasyPizzaContext))]
-    [Migration("20200111224300_InitialCreate")]
+    [Migration("20200112124809_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -85,11 +85,14 @@ namespace EasyPizza.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("DeliveryStatus")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Note")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("OrderStatus")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("OrderType")
+                        .HasColumnType("INTEGER");
 
                     b.Property<int>("PaymentMethod")
                         .HasColumnType("INTEGER");

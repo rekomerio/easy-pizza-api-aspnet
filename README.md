@@ -1,7 +1,8 @@
 # easy-pizza-api-aspnet
 
-## This is a rest API for my "online pizza ordering system" using ASP.NET MVC
-* Database is SqlLite combined with Entity framework.
-* User authentication is done with JWT.
+## This is a REST API for my "Online pizza ordering system" using ASP.NET MVC
 
-This project is purely done to learn some new tricks and technologies and still is very much in progress
+-   Database is SqlLite combined with Entity framework.
+-   User authentication is done with JWT.
+
+This is my first ASP.NET project so I'm still learning and there is still much work to do.

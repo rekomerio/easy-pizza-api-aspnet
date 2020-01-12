@@ -1,6 +1,7 @@
 ﻿using EasyPizza.Models.UserModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EasyPizza.Entities
@@ -14,13 +15,14 @@ namespace EasyPizza.Entities
 
     public enum PaymentStatus
     {
-        Paid,
         Pending,
+        Paid,
         Failed,
     }
 
-    public enum DeliveryStatus
+    public enum OrderStatus
     {
+        Pending,
         Accepted,
         Cooking,
         Delivering,
@@ -28,19 +30,35 @@ namespace EasyPizza.Entities
         Failed,
     }
 
+    public enum OrderType
+    {
+        Delivery,
+        Pickup
+    }
+
     public class Order
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // Auto-increment primary key
-        public long Id { get; set; } 
-        public float Price { get; set; }        
-        public PaymentMethod PaymentMethod { get; set; } 
-        public PaymentStatus PaymentStatus { get; set; } 
-        public DeliveryStatus DeliveryStatus { get; set; } 
-        public string Note { get; set; } 
+        public long Id { get; set; }
+        [Required]
+        public float Price { get; set; }        // Calculate in backend from items
+        [Required]
+        public PaymentMethod PaymentMethod { get; set; }
+        [Required]
+        public PaymentStatus PaymentStatus { get; set; } // Set in backend
+        [Required]
+        public OrderStatus OrderStatus { get; set; } // Set in backend
+        [Required]
+        public OrderType OrderType { get; set; }
+        public string Note { get; set; }
+        [Required]
         public ICollection<OrderItem> OrderItems { get; set; }
+        [Required]
         public Recipient Recipient { get; set; }
-        public DateTime CreatedAt { get; set; } 
-        public long UserId { get; set; } 
+        public DateTime CreatedAt { get; set; }
+        [Required]
+        public long UserId { get; set; }
+        [Required]
         public long RestaurantId { get; set; }
         public Restaurant Restaurant { get; set; }
     }

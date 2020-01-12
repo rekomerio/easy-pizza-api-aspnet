@@ -31,7 +31,7 @@ namespace EasyPizza.Helpers
                 return new AuthorizationModel
                 {
                     Id = Convert.ToInt64(uId),
-                    userGroup = (UserGroup) Convert.ToInt32(uGroup)
+                    UserGroup = (UserGroup) Convert.ToInt32(uGroup)
                 };
             }
             return null;
@@ -52,11 +52,11 @@ namespace EasyPizza.Helpers
         */
         public static bool IsAdmin(this AuthorizationModel auth)
         {
-            return auth.userGroup == UserGroup.Admin;
+            return auth.UserGroup == UserGroup.Admin;
         }
         public static bool IsNotAdmin(this AuthorizationModel auth)
         {
-            return auth.userGroup != UserGroup.Admin;
+            return auth.UserGroup != UserGroup.Admin;
         }
     }
 }

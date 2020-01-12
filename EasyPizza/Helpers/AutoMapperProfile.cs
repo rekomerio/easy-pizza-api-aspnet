@@ -5,6 +5,7 @@ using EasyPizza.Models.RestaurantModels;
 using EasyPizza.Models.MenuModels;
 using EasyPizza.Models.MenuItemModels;
 using EasyPizza.Models.IngredientModels;
+using EasyPizza.Models.OrderModels;
 
 namespace EasyPizza.Helpers
 {
@@ -26,6 +27,9 @@ namespace EasyPizza.Helpers
             CreateMap<MenuItem, MenuItemModel>();
 
             CreateMap<Ingredient, IngredientModel>();
+
+            CreateMap<Order, OrderModel>();
+            CreateMap<CreateOrderModel, Order> ();
         }
     }
 }
