@@ -5,4 +5,3 @@
 -   Database is SqlLite combined with Entity framework.
 -   User authentication is done with JWT.
 
-This is my first ASP.NET project so I'm still learning and there is still much work to do.
